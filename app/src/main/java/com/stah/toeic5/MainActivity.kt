@@ -6,12 +6,15 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
 import com.stah.toeic5.ui.screen.Part2Screen
+import com.stah.toeic5.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApp(this)
+            MyTheme {
+                MyApp(this)
+            }
         }
     }
 }
