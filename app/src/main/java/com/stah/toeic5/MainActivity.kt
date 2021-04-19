@@ -1,27 +1,22 @@
 package com.stah.toeic5
 
 import android.content.Context
-import android.media.MediaPlayer
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.*
+import androidx.compose.material.Divider
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.databinding.DataBindingUtil
-import com.stah.toeic5.databinding.ActivityMainBinding
+import com.stah.toeic5.ui.theme.pink100
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,24 +31,37 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun MyApp(context: Context) {
-    
+    Part2Screen()
+}
+
+@Composable
+fun Part2Screen(names: List<String> = List(25) { "Test1 Part2 Q${(7 + it)}" }) {
     Column() {
-
-        repeat(24){
-            Text(text = "Test1 Q${(7+it).toString()}" )
-            Divider(color = Color.Gray)
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.toeic5), contentDescription = null,
+                modifier = Modifier.height(120.dp),
+                contentScale = ContentScale.Crop,
+            )
+        }
+        Column(modifier = Modifier.fillMaxHeight()) {
+            Spacer(Modifier.height(16.dp))
+            Column() {
+                NameList(names = names)
+            }
         }
     }
-    /*
-    Surface() {
-        Button(onClick = {
-            var mediaPlayer: MediaPlayer? = MediaPlayer.create(context, R.raw.t1pt2q7)
-            mediaPlayer?.start() // no need to call prepare(); create() does that for you
-        }) {
-            Text(text = "Play on Compose")
-        }
+}
 
+@Composable
+fun NameList(names: List<String>, modifier: Modifier = Modifier) {
+    LazyColumn(modifier = modifier) {
+        items(items = names) { name ->
+            Text(modifier = Modifier.padding(24.dp), text = name)
+            Divider(color = pink100)
+        }
     }
-    
-     */
 }
