@@ -60,7 +60,7 @@ fun Part2Screen(names: List<String> = List(25) { "Test1 Part2 Q${(7 + it)}" }) {
 fun NameList(names: List<String>, modifier: Modifier = Modifier) {
     LazyColumn(modifier = modifier) {
         items(items = names) { name ->
-            Text(modifier = Modifier.padding(24.dp), text = name)
+            Text(modifier = Modifier.padding(16.dp), text = name)
             Divider(color = pink100)
         }
     }
