@@ -15,10 +15,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Button
-import androidx.compose.material.ListItem
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -42,8 +39,9 @@ fun MyApp(context: Context) {
     
     Column() {
 
-        repeat(10){
-            Text(text = "test")
+        repeat(24){
+            Text(text = "Test1 Q${(7+it).toString()}" )
+            Divider(color = Color.Gray)
         }
     }
     /*
