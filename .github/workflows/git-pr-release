@@ -1,0 +1,11 @@
+- name: Git pr release action
+  # You may pin to the exact commit or the version.
+  # uses: grassedge/git-pr-release-action@74169c50b9d00129f56a4b03b3309a2ab392f587
+  uses: grassedge/git-pr-release-action@v1.0
+  with:
+    # Base branch of the release pull-request.
+    base: master
+    # Head branch of the release pull-request. Typically, it is the same as a subscribed branch.
+    head: develop
+    # Used to create a pull request.
+    token: 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
