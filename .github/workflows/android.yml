@@ -12,15 +12,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: set up JDK 11
-      uses: actions/setup-java@v2
+    - name: Git pr release action
+      # You may pin to the exact commit or the version.
+      # uses: grassedge/git-pr-release-action@74169c50b9d00129f56a4b03b3309a2ab392f587
+      uses: grassedge/git-pr-release-action@v1.0
       with:
-        java-version: '11'
-        distribution: 'adopt'
-
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+        # Base branch of the release pull-request.
+        base: master
+        # Head branch of the release pull-request. Typically, it is the same as a subscribed branch.
+        head: develop
+        # If true, assign each pull-req's assignees to the release pull-req
+        assign: yoshida0261
+        # Path to the template you want to use.
+        #template: # optional
+        # Used to generate the version string.
+        #tz: # optional
+        # Used to create a pull request.
+        token: 5357189b0583c27518b135b5e6075ae974ffa956
     
