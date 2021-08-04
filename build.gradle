@@ -2,7 +2,7 @@
 buildscript {
     ext.kotlin_version = "1.5.20"
 
-    ext.compose_version = '1.0.0-beta02'
+    ext.compose_version = '1.0.0'
     ext.coroutines_version = '1.4.2'
 
     repositories {
@@ -10,7 +10,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0-alpha09'
+        classpath 'com.android.tools.build:gradle:7.1.0-alpha06'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0"
         // NOTE: Do not place your application dependencies here; they belong
