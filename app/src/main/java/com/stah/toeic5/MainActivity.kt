@@ -1,11 +1,26 @@
 package com.stah.toeic5
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
+import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.Composable
+import com.stah.toeic5.ui.screen.Part2ListScreen
+import com.stah.toeic5.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContent {
+            MyTheme {
+                MyApp(this)
+            }
+        }
     }
 }
+
+@Composable
+fun MyApp(context: Context) {
+    Part2ListScreen(context = context)
+}
+
