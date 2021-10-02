@@ -1,2 +1,4 @@
 include ':app'
 rootProject.name = "Toeic5"
+include ':repository'
+include ':model'
