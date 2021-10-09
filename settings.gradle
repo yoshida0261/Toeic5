@@ -1,6 +1,5 @@
 include ':app'
 rootProject.name = "Toeic5"
-include ':repository'
 include ':model'
 include ':feature:selectPart'
 include ':feature:player'
