@@ -16,7 +16,7 @@ jobs:
           java-version: 11
           cache: "gradle"
       - name: Run unit test
-        run: ./gradlew testDebugUnitTest
+        run: ./gradlew testDebugUnitTest mergeAndroidReports --continue
       - name: Publish Test Report
         if: cancelled() != true
         uses: mikepenz/action-junit-report@v2
