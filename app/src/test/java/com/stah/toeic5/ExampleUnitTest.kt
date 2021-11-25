@@ -23,7 +23,7 @@ class ExampleUnitTest {
 
     @Test
     fun addTest() {
-        assertEquals(4, 2 + 2)
+        assertEquals(4, 3 + 2)
     }
 }
 
