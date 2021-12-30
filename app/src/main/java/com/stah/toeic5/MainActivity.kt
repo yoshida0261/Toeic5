@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
-import com.stah.toeic5.ui.screen.Part2ListScreen
+import com.stah.toeic5.home.HomeScreen
 import com.stah.toeic5.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +21,6 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun MyApp(context: Context) {
-    Part2ListScreen(context = context)
+    HomeScreen()
 }
 
