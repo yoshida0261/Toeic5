@@ -1,5 +1,6 @@
 package com.stah.toeic5
 
+import junit.framework.Assert.assertEquals
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -18,6 +19,11 @@ class ExampleUnitTest {
         val json = Json.encodeToString(Data(42, "str"))
         print(json)
         //assertEquals(4, 2 + 2)
+    }
+
+    @Test
+    fun addTest() {
+        assertEquals(4, 2 + 2)
     }
 }
 
