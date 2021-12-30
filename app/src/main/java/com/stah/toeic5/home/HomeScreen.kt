@@ -9,11 +9,9 @@ import androidx.compose.ui.graphics.Color
 @Composable
 fun HomeScreen() {
     Scaffold(topBar = {
-        TopAppBar(
-            title = { Text("2021年7月の利用履歴", color = Color.Black) }
-        )
+
     },
-        content = { Text("test") }
+        content = { TodayScore() }
     )
 
 }
