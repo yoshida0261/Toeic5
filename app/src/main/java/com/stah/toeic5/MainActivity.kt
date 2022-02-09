@@ -6,7 +6,9 @@ import android.view.View
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
+import androidx.navigation.compose.rememberNavController
 import com.stah.toeic5.home.HomeScreen
+import com.stah.toeic5.home.ScoreNavHost
 import com.stah.toeic5.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun MyApp(context: Context) {
-    HomeScreen()
+    val navController = rememberNavController()
+    val nav = ScoreNavHost(navController = navController)
 }
 

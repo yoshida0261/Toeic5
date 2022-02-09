@@ -7,11 +7,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun HomeScreen() {
-    Scaffold(topBar = {
+fun HomeScreen(scoreNavigation: ()-> Unit) {
+    Scaffold(
+        topBar = { Text("home screen") },
+        content = { TodayScore(scoreNavigation) },
 
-    },
-        content = { TodayScore() }
     )
 
 }
