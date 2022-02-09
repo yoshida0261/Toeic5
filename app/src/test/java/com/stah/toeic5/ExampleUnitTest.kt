@@ -22,9 +22,6 @@ import org.robolectric.shadows.ShadowLog
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(RobolectricTestRunner::class)
-@Config(
-    instrumentedPackages = ["androidx.loader.content"]
-)
 class ExampleUnitTest {
 
     @get:Rule val composeTestRule = createComposeRule()
